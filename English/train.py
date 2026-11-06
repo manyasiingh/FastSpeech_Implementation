@@ -8,12 +8,12 @@ from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 
-from utils.model import get_model, get_vocoder, get_param_num
-from utils.tools import to_device, log, synth_one_sample
-from model import FastSpeech2Loss
-from dataset import Dataset
+from FastSpeech_Implementation.English.utils.model import get_model, get_vocoder, get_param_num
+from FastSpeech_Implementation.English.utils.tools import to_device, log, synth_one_sample
+from FastSpeech_Implementation.English.model import FastSpeech2Loss
+from FastSpeech_Implementation.English.dataset import Dataset
 
-from evaluate import evaluate
+from FastSpeech_Implementation.English.evaluate import evaluate
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

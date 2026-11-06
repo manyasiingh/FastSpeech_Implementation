@@ -9,10 +9,10 @@ from torch.utils.data import DataLoader
 from g2p_en import G2p
 from pypinyin import pinyin, Style
 
-from utils.model import get_model, get_vocoder
-from utils.tools import to_device, synth_samples
-from dataset import TextDataset
-from text import text_to_sequence
+from FastSpeech_Implementation.English.utils.model import get_model, get_vocoder
+from FastSpeech_Implementation.English.utils.tools import to_device, synth_samples
+from FastSpeech_Implementation.English.dataset import TextDataset
+from FastSpeech_Implementation.English.text import text_to_sequence
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

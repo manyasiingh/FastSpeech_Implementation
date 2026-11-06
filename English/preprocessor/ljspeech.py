@@ -5,7 +5,7 @@ import numpy as np
 from scipy.io import wavfile
 from tqdm import tqdm
 
-from text import _clean_text
+from FastSpeech_Implementation.English.text import _clean_text
 
 
 def prepare_align(config):
@@ -14,22 +14,16 @@ def prepare_align(config):
     sampling_rate = config["preprocessing"]["audio"]["sampling_rate"]
     max_wav_value = config["preprocessing"]["audio"]["max_wav_value"]
     cleaners = config["preprocessing"]["text"]["text_cleaners"]
-    for speaker in tqdm(os.listdir(in_dir)):
-        for chapter in os.listdir(os.path.join(in_dir, speaker)):
-            for file_name in os.listdir(os.path.join(in_dir, speaker, chapter)):
-                if file_name[-4:] != ".wav":
-                    continue
-                base_name = file_name[:-4]
-                text_path = os.path.join(
-                    in_dir, speaker, chapter, "{}.normalized.txt".format(base_name)
-                )
-                wav_path = os.path.join(
-                    in_dir, speaker, chapter, "{}.wav".format(base_name)
-                )
-                with open(text_path) as f:
-                    text = f.readline().strip("\n")
-                text = _clean_text(text, cleaners)
+    speaker = "LJSpeech"
+    with open(os.path.join(in_dir, "metadata.csv"), encoding="utf-8") as f:
+        for line in tqdm(f):
+            parts = line.strip().split("|")
+            base_name = parts[0]
+            text = parts[2]
+            text = _clean_text(text, cleaners)
 
+            wav_path = os.path.join(in_dir, "wavs", "{}.wav".format(base_name))
+            if os.path.exists(wav_path):
                 os.makedirs(os.path.join(out_dir, speaker), exist_ok=True)
                 wav, _ = librosa.load(wav_path, sampling_rate)
                 wav = wav / max(abs(wav)) * max_wav_value

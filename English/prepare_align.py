@@ -2,7 +2,8 @@ import argparse
 
 import yaml
 
-from preprocessor import ljspeech, aishell3, libritts
+from FastSpeech_Implementation.English.preprocessor import aishell3, libritts
+from FastSpeech_Implementation.English.preprocessor import ljspeech
 
 
 def main(config):

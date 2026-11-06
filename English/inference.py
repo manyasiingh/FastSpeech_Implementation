@@ -3,9 +3,9 @@ matplotlib.use("Agg"); import matplotlib.pyplot as plt
 from scipy.io import wavfile
 from argparse import Namespace
 from g2p_en import G2p
-from utils.model import get_model, get_vocoder, vocoder_infer
-from utils.tools import to_device
-from text import text_to_sequence
+from FastSpeech_Implementation.English.utils.model import get_model, get_vocoder, vocoder_infer
+from FastSpeech_Implementation.English.utils.tools import to_device
+from FastSpeech_Implementation.English.text import text_to_sequence
 
 p = argparse.ArgumentParser()
 p.add_argument("-c", "--config", required=True); p.add_argument("--restore_step", type=int, required=True)

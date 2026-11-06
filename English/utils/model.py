@@ -6,8 +6,8 @@ _orig_load = torch.load
 torch.load = lambda *a, **k: _orig_load(*a, **{**k, 'weights_only': False})
 import numpy as np
 
-import hifigan
-from model import FastSpeech2, ScheduledOptim
+import FastSpeech_Implementation.English.hifigan as hifigan
+from FastSpeech_Implementation.English.utils.model import FastSpeech2, ScheduledOptim
 
 
 def get_model(args, configs, device, train=False):

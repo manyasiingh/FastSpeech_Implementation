@@ -6,10 +6,10 @@ import yaml
 import torch.nn as nn
 from torch.utils.data import DataLoader
 
-from utils.model import get_model, get_vocoder
-from utils.tools import to_device, log, synth_one_sample
-from model import FastSpeech2Loss
-from dataset import Dataset
+from FastSpeech_Implementation.English.utils.model import get_model, get_vocoder
+from FastSpeech_Implementation.English.utils.tools import to_device, log, synth_one_sample
+from FastSpeech_Implementation.English.model import FastSpeech2Loss
+from FastSpeech_Implementation.English.dataset import Dataset
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
