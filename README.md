@@ -36,7 +36,7 @@ Train and validation sets are split by utterance with no overlap (validation: 66
 
 ## Setup
 
-1. Python environment: `pip install -r requirements.txt` (numpy 2.x, PyTorch 2.6 or newer; see the file for pinned versions).
+1. Python environment: `pip install -r requirements.txt` (minimum versions: numpy 2.x, PyTorch 2.6 or newer; the original FastSpeech2 pins are not compatible with the modified code).
 2. Montreal Forced Aligner (MFA), installed in its own environment, for phoneme alignment:
    - English: `mfa model download acoustic english_us_arpa` and `mfa model download dictionary english_us_arpa`
    - Telugu: the IndicMFA Telugu acoustic model and dictionary from [AI4Bharat/IndicMFA](https://github.com/AI4Bharat/IndicMFA), placed in `mfa_models/`
