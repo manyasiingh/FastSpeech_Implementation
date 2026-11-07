@@ -74,7 +74,7 @@ python plot_losses.py output/log/Telugu ../Results/Telugu
 ## Checkpoints
 
 Trained checkpoints are in `English/checkpoints/` and `Telugu/checkpoints/` (Git LFS, see `.gitattributes`).
-TODO: if any checkpoint is hosted elsewhere, add the download link here and make sure it stays accessible during evaluation.
+
 
 ## Main changes to the reference implementation
 
