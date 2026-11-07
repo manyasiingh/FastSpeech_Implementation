@@ -1,0 +1,22 @@
+# Common requirements for English/ and Telugu/ (FastSpeech 2)
+# Minimum versions: the code was adapted for numpy 2.x, PyTorch 2.6+ and librosa >= 0.10
+# (np.int/np.float removed, torch.load weights_only=False, keyword-argument librosa calls).
+# The original FastSpeech2 pins (torch 1.7.0, numpy 1.19.0, librosa 0.7.2) are NOT compatible.
+# For exact reproduction, replace this file with `pip freeze` from the training environment.
+torch>=2.6
+numpy>=2.0
+scipy
+librosa>=0.10
+numba
+soundfile
+pyworld
+tgt==1.4.4
+g2p_en==2.1.0
+inflect
+unidecode
+pypinyin
+PyYAML
+scikit-learn
+matplotlib
+tensorboard
+tqdm
